@@ -1,0 +1,500 @@
+<!doctype html>
+<html>
+<head>
+<title>NBA球衣商城</title>
+<meta charset="utf-8">
+<style type="text/css">
+	/*初始化*/
+	*{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border: 0;
+    }
+    body{
+    	 background: #f7f7f7;
+    }
+    /*浮动*/
+    .fl{
+    	float: left;
+    }
+    .fr{
+    	float: right;
+    }
+	/*清除浮动*/
+		.clearfix:after{
+		visibility:hidden;
+		clear:both;
+		display:block;
+		content:".";
+		height:0;
+	}.clearfix{
+		*zoom:1;
+	}
+	a{
+		text-decoration:none;
+		color: #000;
+	}
+	a:hover{
+		color: #000;
+	}
+	ul,li{
+		list-style:none;
+	}
+	/*头 导航栏*/
+	.header-top{
+		width:100%;
+		background:#0a3665;
+		height: 80px;
+	}
+	.wrap{
+		width:80%;
+		margin:0 auto;
+	}
+	/*导航栏左侧logo文字*/
+	.header-bottom-left{
+		float:left;
+		width:65%;
+		margin-top:10px;	
+	}
+	/*logo*/
+	.logo{
+		float:left;
+		margin-right:6.6%;	
+	}
+	/*导航栏 文字*/
+	.menu{
+		float:left;
+		line-height:65px;
+	}
+	.menu li{
+		float: left;
+		margin-right: 15px;
+	}
+	.menu li a{
+		color: #fff;
+		font-size:20px;
+	}
+	.menu li a:hover{
+		color: #9cc;
+	}
+	/*导航栏右侧搜索框*/
+	.header-bottom-right{
+		float: right;
+		width: 35%;
+		margin-top: 17px;
+	}
+	/*搜索框*/
+	.search{
+		background: #fff;
+		border:1px solid #ddd;
+		position: relative;
+		float: left;
+		margin: 6px 20px 0 0; 
+	}
+	.search input[type="text"]{
+		border:none;
+		outline: none;
+		background: none;
+		font-size: 0.85em;
+		color: #777;
+		width: 130px;
+		padding: 7px;
+		margin: 0;
+	}
+	.search input[type="button"]{
+		border:none;
+		outline: none;
+		background: none;
+		font-size: 0.85em;
+		color: #777;
+		width: 50px;
+		padding: 7px;
+		margin: 0;
+		cursor: pointer;
+	}
+	.search_1{
+		cursor: pointer;
+		position: absolute;
+		z-index: 99;
+		color: #000;
+	}
+
+	/*轮播图*/
+    .all {
+      width: 1400px;
+      height: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .screen {
+      width: 1400px;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .screen li {
+      width: 1400px;
+      height: 600px;
+      overflow: hidden;
+      float: left;
+    }
+
+    .screen ul {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width:5600px;
+    }
+
+   
+    .all ol {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .all ol li {
+      float: left;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .all ol li.current {
+      background: #ccc;
+
+    }
+
+    #arr {
+      display: none;
+    }
+
+    #arr span {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -20px;
+      background: #000;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: '黑体';
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.3;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+
+    #arr #right {
+      right: 5px;
+      left: auto;
+    }
+
+    /*内容 */
+    .middle_c{
+    	width: 960px;
+    	margin:50px auto;
+    }
+    .middle_c h1{
+    	text-align: center;
+    	margin-bottom: 10px;
+    }
+	.middle_c p{
+    	text-align: center;
+    	margin-bottom: 5px;
+    }
+    .middle_c span{
+    	text-align: center;
+    	display: block;
+    	margin: 20px auto;
+    	width: 100px;
+    	height: 40px;
+    	background: #222;
+    	border-color: #222;
+    	border-radius: 5px;
+    	color: #fff;
+    	line-height: 40px;
+    }
+    /*海报*/
+    .middle_bg1{
+    	background: url("images/b1.jpg");
+    	width: 100%;
+    	height: 700px;
+    }
+    .middle_bg2{
+    	width: 100%;
+    	height: 1726px;
+    	background: url("images/b2.jpg");
+    }
+    .middle_l{
+    	width: 600px;
+    	height:150px;
+    	float: left;
+    	margin:1550px 0 0 100px;
+    }
+    .middle_l h1{
+    	text-align: center;
+    }
+    .middle_l p{
+    	text-align: center;
+    }
+    .middle_r{
+    	width: 600px;
+    	height:150px;
+    	float: right;
+    	margin:1550px 100px 0 0;
+    }
+    .middle_r h1{
+    	text-align: center;
+    }
+    .middle_r p{
+    	text-align: center;
+    }
+    /*鞋子*/
+    .shose{
+    	width: 100%;
+    	height: 611px;
+    	background: url("images/b3.jpg");
+    }
+	/*底部版权信息*/
+	.footer{
+		background: #292929;
+		width: 100%;
+		height: 150px;
+		line-height: 150px;
+	}
+	
+	.copyright{
+		width:500px;
+		color: #666666;
+		text-align: center;
+		margin:0px auto;
+	}
+</style>
+</head>
+
+<body> 
+	<div class="header-top"> <!--头 导航栏-->
+    	<div class="wrap clearfix">
+       		<div class="header-bottom-left"> <!--导航栏左侧logo文字-->
+            	<div class="logo">	<!--logo-->
+                	<a href="index.html"><img src="images/logo_cn.png"></a>
+                </div>
+                <div class="menu"> <!--导航栏 文字-->
+                	<ul>
+                		<li><a href="index.html">首页</a></li>
+                		<li><a href="jersey.html">所有商品</a></li>
+                		<li><a href="index.html">球衣</a></li>
+                		<li><a href="index.html">上装</a></li>
+                		<li><a href="index.html">配件</a></li>
+                	</ul>
+                </div>
+            </div>	
+            <div class="header-bottom-right">	<!--导航栏右侧搜索框-->
+            	<div class="search">			<!-- 搜索框 -->
+            		<input type="text" name="search" value="Search" id="search" onclick="this.value='' ">
+            		<input type="button" name="" value="搜索"  id="bbtn">
+            		<ul class="search_1" id="search_1">
+            		
+            		</ul>
+            	</div>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+	<div class="all" id='box'>
+	  <div class="screen"><!--相框-->
+	    <ul>
+	      <li>
+	      	<img src="images/n1.jpg" width="1400" height="600"/>
+	      </li>
+	      <li>
+	      	<img src="images/n2.jpg" width="1400" height="600"/>
+	      </li>
+	       <li>
+	      	<img src="images/n3.jpg" width="1400" height="600"/>
+	      </li>
+	    </ul>
+	    <ol>
+	    </ol>
+	  </div>
+	  <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+	</div>
+
+	<!-- 内容 -->
+		<div class="middle_c">
+				<h1>NBA 城市版球衣</h1>
+				<p>深受当地独树一帜的音乐、艺术与梦想等灵感启发，</p>
+				<p>也象征着球迷对各自主队的无畏支持。</p>
+				<a href="jersey.html" target="_blank"><span>立即选购</span></a>
+		</div>
+		<!-- 海报 -->
+		<div class="middle_bg1">
+		</div>
+		
+		<div class="middle_c">
+				<h1>搭载内置感应芯片的球衣</h1>
+				<h1>打开全新比赛视角</h1>
+				<p>穿上你的球衣，享受NIKE才能带来的专属特权。</p>
+				<a href="jersey.html" target="_blank"><span>立即选购</span></a>
+		</div>
+
+		<div class="middle_bg2">
+			<div class="middle_l">
+				<h1>热身时刻</h1>
+				<p>为 NBA 专业赛事打造的连帽衫 Nike Therma Flex Showtime Hoodie，</p>
+				<p>首次作为 NBA 球队出场服，为你提供绝佳的保暖性和出众的灵动性。</p>
+			</div>
+			<div  class="middle_r">
+				<h1>比赛日</h1>
+				<p>这，不只是球衣。在比赛日用手机触发全新</p>
+				<p>耐克球队球衣下标，获得非凡“近场”体验和专属奖励。</p>
+			</div>
+		</div>
+
+		<div class="middle_c">
+			<h1>NIKEiD 专属定制</h1>
+			<p>LEBRON SOLDIER XIIKD 11PG 2NIKEiD 专属定制选择你支持的主队配色和你喜爱的外底，添加个性签名或号码，打造专属于你的战靴。</p>
+		</div>
+		<div class="shose">
+			
+		</div>
+		<!-- 内容 -->
+
+
+	<!-- 底部版权 -->
+	<div class="footer">
+		<div class="copyright">
+			<p>版权所有©2018。保留所有权利。</p>
+		</div>
+	</div>
+
+<script src="common.js"></script>
+<script type="text/javascript">
+	//获取最外面div
+	var box = my$("box");
+	//获取相框
+	var screen = box.children[0];
+	//焦点div
+	var arr=my$("arr");
+ 	//相框宽度
+ 	var imgWidth = screen.offsetWidth;
+ 	//获取ul
+ 	var ulobj = screen.children[0];
+ 	//获取ul 中li个数
+ 	var list = ulobj.children;
+ 	//获取ol
+ 	var olobj = screen.children[1];
+//索引变量
+	var pic=0;
+
+//创建小按钮 根据ul中的li个数
+	for(var i=0;i<list.length;i++){
+		var liobj = document.createElement("li");
+		olobj.appendChild(liobj);
+		// liobj.innerHTML=i+1;
+		liobj.setAttribute("index",i);
+		//注册鼠标进入事件
+		liobj.onmouseover=function(){
+			for(var j=0;j<olobj.children.length;j++){
+				olobj.children[j].removeAttribute("class");
+			}
+			this.className="current";
+
+			//获取鼠标进入的索引值
+			pic = this.getAttribute("index");
+			animate(ulobj,-pic*imgWidth);
+		}
+	} 
+	//设置ol中第一个li背景色
+	olobj.children[0].className="current";
+	//克隆一个ul中第一个li加入到最后
+	ulobj.appendChild(ulobj.children[0].cloneNode(true));
+	//鼠标进入到box的div显示左右焦点的div
+	my$("box").onmouseover=function(){
+		my$("arr").style.display = "block";
+		 clearInterval(timeId);
+	}
+	//鼠标离开到box的div隐藏左右焦点的div
+	my$("box").onmouseout=function(){
+		my$("arr").style.display = "none";
+		 timeId=setInterval(clickHandle,2500);
+	}
+	//自动播放
+	var timeId=setInterval(clickHandle,2500);
+
+	//右边按钮
+	my$("right").onclick=clickHandle;
+
+	function clickHandle(){
+		if(pic==list.length-1){
+			pic=0;
+			ulobj.style.left = 0+"px";
+		}
+		pic++;
+		animate(ulobj,-pic*imgWidth);
+		if(pic==list.length-1){
+			//第五个颜色干掉
+			olobj.children[olobj.children.length-1].className="";
+			//第一个按钮颜色设置上
+			olobj.children[0].className="current";
+		}else{
+			for(var i=0;i<olobj.children.length;i++){
+				olobj.children[i].className="";
+			}
+			olobj.children[pic].className="current";
+		}
+	}
+	//左边按钮
+	my$("left").onclick=click;
+	function click(){
+		if(pic==0){
+			pic=list.length-1;
+			ulobj.style.left = -pic*imgWidth+"px";
+		}
+		pic--;
+		animate(ulobj,-pic*imgWidth);
+		for(var i=0;i<olobj.children.length;i++){
+				olobj.children[i].className="";
+			}
+			olobj.children[pic].className="current";
+	}
+
+
+
+	function animate(element,target){
+		clearInterval(element.timeId);
+		 element.timeId=setInterval(function(){
+			//获取元素的当前的位置,数字类型
+			var current=element.offsetLeft;
+			//每次移动距离
+			var step=25;
+			
+			step=current<target?step:-step;
+			current+=step;
+			if(Math.abs(current-target)>Math.abs(step)){
+				element.style.left=current+"px";
+			}else{
+				clearInterval(element.timeId);
+				element.style.left=target+"px";
+			}
+		},10);
+	}
+
+</script>
+
+</body>
+</html>
